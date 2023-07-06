@@ -9,7 +9,7 @@ def transcribe(filepath, model = "base.en"):
     return result["text"]
 
 
-# batch transcribe audio folder and save in transcriptions folder
+# batch transcribe audio folder and save in whisper folder
 for file in os.listdir("audio"):
     if not file.startswith('.'):
         start_time = time.time()
