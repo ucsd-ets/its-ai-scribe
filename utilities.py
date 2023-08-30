@@ -18,7 +18,7 @@ def transcribe(filepath, model = "base.en"):
                               logprob_threshold = -0.4)
     return result
 
-def query(prompt, excerpt):
+def query(prompt, excerpt, stream=False):
     """
     Send a chat-based query to the Llama-2-70b chat model and return its response.
     """
@@ -27,10 +27,28 @@ def query(prompt, excerpt):
 
     chat_completion = openai.ChatCompletion.create(model="Llama-2-70b-chat", 
                                                    max_tokens= 2000,
-                                                   request_timeout=600, 
+                                                   request_timeout=600,
+                                                   stream=stream,
                                                    messages=[{"role": "user", "content": prompt + excerpt}])
     
-    return chat_completion['choices'][0]['message']['content']
+    if stream:
+        collected_chunks = []
+        collected_messages = ""
+
+        # capture and print event stream
+        for chunk in chat_completion:
+            collected_chunks.append(chunk)  # save the event response
+            chunk_message = chunk['choices'][0]['delta']  # extract the message
+            if "content" in chunk_message:
+                message_text = chunk_message['content']
+                collected_messages += message_text
+                print(f"{message_text}", end="")
+        print(f"\n")
+        return collected_messages
+
+
+    else:
+        return chat_completion['choices'][0]['message']['content']
 
 
 def chunk_on_pause(segments, n_pauses, min_words, max_words):
