@@ -1,7 +1,7 @@
 import sys
 import json
 sys.path.append("..")
-from utilities import *
+from src.utilities import *
 
 segments = None
 with open('tmp.txt', 'r') as f:

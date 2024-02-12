@@ -1,6 +1,7 @@
 from datetime import timedelta
 import whisper
 import openai
+import src.config as config
 import os
 
 
@@ -23,7 +24,7 @@ def query(prompt, excerpt, stream=False):
     Send a chat-based query to the Llama-2-70b chat model and return its response.
     """
 #     openai.api_base = "https://its-llamarama.ucsd.edu/v1"
-    openai.api_key = "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"
+    openai.api_key = config.OPENAI_API_KEY
 
     chat_completion = openai.ChatCompletion.create(model="gpt-4", 
                                                    max_tokens= 2000,

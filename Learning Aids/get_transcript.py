@@ -1,10 +1,9 @@
 import sys
 import json
 sys.path.append("..")
-from utilities import *
+from src.utilities import *
 
-result = transcribe("../audio/example.mp3", "medium.en")
-
+result = transcribe("../artifacts/audio/example.mp3", "medium.en")
 
 # Segment the transcript on all pauses
 segments = chunk_on_pause(result['segments'], -1, 250, 1500)

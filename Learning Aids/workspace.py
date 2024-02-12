@@ -1,6 +1,6 @@
 import sys
 sys.path.append("..")
-from utilities import *
+from src.utilities import *
 
 result = transcribe("../audio/example.mp3", "medium.en")
 
