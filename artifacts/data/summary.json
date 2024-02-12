@@ -1,22 +1,22 @@
 [
     {
         "title": "\"Introduction to MIT's Course 600: Computer Science and Programming\"",
-        "content": "Course 600: Introduction to Computer Science & Programming taught by Professors Grimson & Guttag. Content under a Creative Commons license, it teaches computational thinking, coding, and computational problem-solving. Ideal for beginners to programming."
+        "content": "Introduction to MIT's Course 600: Computer Science and Programming; taught by Professors Eric Grimson and John Guttag; aims to help everyone learn about computation; strategic and tactical goals include preparing students for majoring in Course 6, building coding confidence, understanding computation's role in technical problems, and acquiring various computational skills."
     },
     {
         "title": "\"Mapping Scientific Problems into a Computational Framework: An Introductory Course\"",
-        "content": "The course taught latest skill of mapping scientific problems into computational framework. Course details include two lectures, one recitation each week, and nine hours of class work primarily involving Python programming. Course uses external libraries/code."
+        "content": "Learn to map scientific problems into a computational framework through lectures, recitations, and problem sets in Python, with an emphasis on understanding the limitations and capabilities of computation."
     },
     {
         "title": "\"Course Overview and Expectations\"",
-        "content": "Understand course materials and codes. Two quizzes, dates TBA, conflicts to be communicated. Special needs noted 2 weeks prior to quiz. Quizzes are open book/notes. Problem sets 55% of grade, quizzes 45% including final. Course mainly paperless via website. Recitations on Fridays."
+        "content": "Two quizzes scheduled (Oct 2nd, Nov 4th), check website for conflicts; problem sets help learn; seek help if needed."
     },
     {
         "title": "\"Course Guidelines: Sign Up, Optional Textbook, Attendance, and the Importance of Note-Taking\"",
-        "content": "Course requires sign-ups for recitation, optional Python textbook, attendance not mandatory but participation encouraged, no set course text, reading is expected but not fully covered in materials, low TA priority for text/lecture related questions, responsible behavior needed, notes not provided and students encouraged to self-note-take for retention."
+        "content": "Recitation signup, optional textbook, encouraged attendance, extensive material covered, TAs may lack patience, responsible behavior expected, no handed out class notes, valuable note-taking."
     },
     {
         "title": "\"Importance of Class Participation, Note Taking, and Attendance in Lectures and Recitations\"",
-        "content": "Lecture handouts contain code examples; staff aid learning but won't answer easily Google-able questions; classes recorded for OpenCourseWare; recitation attendance expected; established rules must be understood."
+        "content": "Handouts provided with code examples for lectures; notes may not be clear without attending lecture; personal annotations recommended; instructors and staff available for assistance; recitations required for additional material."
     }
 ]

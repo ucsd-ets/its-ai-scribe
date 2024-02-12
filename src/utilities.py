@@ -26,7 +26,7 @@ def query(prompt, excerpt, stream=False):
 #     openai.api_base = "https://its-llamarama.ucsd.edu/v1"
     openai.api_key = config.OPENAI_API_KEY
 
-    chat_completion = openai.ChatCompletion.create(model="gpt-4", 
+    chat_completion = openai.ChatCompletion.create(model=config.MODEL, 
                                                    max_tokens= 2000,
                                                    request_timeout=600,
                                                    stream=stream,
