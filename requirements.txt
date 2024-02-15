@@ -2,3 +2,7 @@ openai==0.28
 openai-whisper
 ipykernel
 ffmpeg
+git+https://github.com/pytube/pytube
+fastapi
+python-multipart
+uvicorn[standard]

@@ -69,14 +69,18 @@ def chunk_on_pause(segments, n_pauses, min_words, max_words):
 
     for i in range(len(segments) - 1):
         time_between = pause(segments[i], segments[i+1])
-
-        if time_between > 0 and text:
+        seg_text = segments[i]['text']
+        
+        text_words_len = len(text.split(' '))
+        n_words = len(seg_text.split(' '))
+        
+        if (time_between > 0 or text_words_len + n_words > max_words) and text:
             chunks.append({"start":text_start, "end":segments[i]['end'], "time_between":time_between, "text":text})
             times.append(time_between)
             text = ""
             text_start = segments[i]['end']
         else:
-            text += segments[i]['text']
+            text += seg_text
 
     # Second Pass: Split chunks on the n longest pauses or max words & combine small chunks
     pause_cutoff = sorted(times, reverse=True)[n_pauses]
@@ -88,8 +92,10 @@ def chunk_on_pause(segments, n_pauses, min_words, max_words):
     for c in chunks:
         text += c["text"]
         wordcount = len(text.split(' '))
+        print(f"Chunk {len(output)+1} - {c['start']} to {c['end']}: {wordcount} words")
 
         if wordcount >= min_words:
+            
             if c["time_between"] > pause_cutoff or wordcount > max_words:
                 output.append({"start":text_start, "end":c['end'], "wordcount":wordcount, "text":text})
                 text = ""

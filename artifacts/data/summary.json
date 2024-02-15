@@ -1,22 +1,10 @@
 [
     {
-        "title": "\"Introduction to MIT's Course 600: Computer Science and Programming\"",
-        "content": "Introduction to MIT's Course 600: Computer Science and Programming; taught by Professors Eric Grimson and John Guttag; aims to help everyone learn about computation; strategic and tactical goals include preparing students for majoring in Course 6, building coding confidence, understanding computation's role in technical problems, and acquiring various computational skills."
+        "title": "\"Understanding Radioactivity and Half-Life\"",
+        "content": "Neanderthals went extinct, radioactivity used to date objects, carbon 14 decay, uranium 238 half-life, radioisotopes decay like coin toss."
     },
     {
-        "title": "\"Mapping Scientific Problems into a Computational Framework: An Introductory Course\"",
-        "content": "Learn to map scientific problems into a computational framework through lectures, recitations, and problem sets in Python, with an emphasis on understanding the limitations and capabilities of computation."
-    },
-    {
-        "title": "\"Course Overview and Expectations\"",
-        "content": "Two quizzes scheduled (Oct 2nd, Nov 4th), check website for conflicts; problem sets help learn; seek help if needed."
-    },
-    {
-        "title": "\"Course Guidelines: Sign Up, Optional Textbook, Attendance, and the Importance of Note-Taking\"",
-        "content": "Recitation signup, optional textbook, encouraged attendance, extensive material covered, TAs may lack patience, responsible behavior expected, no handed out class notes, valuable note-taking."
-    },
-    {
-        "title": "\"Importance of Class Participation, Note Taking, and Attendance in Lectures and Recitations\"",
-        "content": "Handouts provided with code examples for lectures; notes may not be clear without attending lecture; personal annotations recommended; instructors and staff available for assistance; recitations required for additional material."
+        "title": "\"Understanding Radioactivity and Using it to Determine Age\"",
+        "content": "Radioactivity is a random yet continuous process with a fixed half-life and varying levels of radioactivity, and it can be used to determine the age of Earth through uranium and lead decay in zircon crystals."
     }
 ]
