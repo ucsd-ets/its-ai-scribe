@@ -1,6 +1,7 @@
+import os
 from fastapi import APIRouter, UploadFile, File
 from pytube import YouTube
-from src.notetake import notetake
+from src.app.notetake import notetake
 import pydantic
 import ffmpeg
 import logging
@@ -18,10 +19,10 @@ async def convert(file: UploadFile = File(...)):
             buffer.write(await file.read())
         
         # Begin note taking task
-        logger.info("Beginning note taking task")
-        notetake(f'artifacts/audio/{file.filename}', 'tiny.en', 'artifacts/data')
         
-        return {"message": "Task finished"}
+        md = go_with_file(file.filename)
+        
+        return {"message": "Task finished", "notes": md}
     else:
         return {"message": "Invalid file type"}
 
@@ -39,7 +40,15 @@ async def convert(url: URL):
     stream.download(output_path='artifacts/audio', filename=fname)
     
     # Begin note taking task
-    logger.info("Beginning note taking task")
-    notetake(f'artifacts/audio/{fname}', 'tiny.en', 'artifacts/data')
+    md = go_with_file(fname)
     
-    return {"message": "Task finished"}
+    return {"message": "Task finished", "notes": md}
+
+def go_with_file(fname):
+    logger.info("Beginning note taking task")
+    
+    if not os.path.exists(f'artifacts/data/{fname}'):
+        os.makedirs(f'artifacts/data/{fname}')
+        
+    md = notetake(f'artifacts/audio/{fname}', 'tiny.en', f'artifacts/data/{fname}')
+    return md

@@ -1,7 +1,7 @@
 from datetime import timedelta
 import whisper
 import openai
-import src.config as config
+from . import config
 import os
 
 

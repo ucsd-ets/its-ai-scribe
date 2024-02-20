@@ -1,6 +1,6 @@
 import requests
 import os
-from src.notetake import notetake
+from src.app.notetake import notetake
 
 def test_mp3_conversion():
     

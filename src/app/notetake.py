@@ -1,6 +1,6 @@
-import src.utilities
+from . import utilities
 import json
-import src.config as config
+from . import config
 import os
 
 def notetake(audio_path: str, language: str, output_path: str):
@@ -10,19 +10,19 @@ def notetake(audio_path: str, language: str, output_path: str):
         with open(f'{output_path}/transcript.json', 'r') as file:
             result = json.loads(file.read())
     else:
-        result = src.utilities.transcribe(audio_path, language)
+        result = utilities.transcribe(audio_path, language)
     
     # Cache transcript
     with open(f'{output_path}/transcript.json', 'w') as file:
         file.write(json.dumps(result, indent=4))
     
-    segments = src.utilities.chunk_on_pause(result['segments'], -1, 250, 750)
+    segments = utilities.chunk_on_pause(result['segments'], -1, 250, 750)
     
     chapters = gen_chapters(output_path, segments)
     note_arr = gen_notes(output_path, chapters)
     sum_arr = gen_summaries(output_path, note_arr)
     abstract = gen_abstract(output_path, sum_arr)
-    md = gen_markdown(output_path, sum_arr, note_arr, abstract)
+    return gen_markdown(output_path, sum_arr, note_arr, abstract)
 
         
 def gen_chapters(output_path, segments):
@@ -30,7 +30,7 @@ def gen_chapters(output_path, segments):
     # subset = segments[:5]
     subset = segments
     
-    chapters = src.utilities.chapterize(subset)
+    chapters = utilities.chapterize(subset)
 
     for c in chapters:
         print(c["title"])
@@ -49,7 +49,7 @@ def gen_notes(output_path, chapters):
     for c in chapters:
         content = '\n'.join([c['title'], c['metadata'], c['text']])
         
-        notes = src.utilities.query(q, content)
+        notes = utilities.query(q, content)
         filtered ='\n'.join([line for line in notes.split('\n') if line.strip() and line.strip()[0] in ('*', '+', '-')])
         
         print('\n', filtered, '\n')
@@ -66,7 +66,7 @@ def gen_summaries(output_path, note_arr):
 
     sum_arr = []
     for n in note_arr:
-        summary = src.utilities.query(q, n['content'])
+        summary = utilities.query(q, n['content'])
         print(summary)
         sum_arr.append({'title': n['title'], 'content': summary})
         
@@ -83,7 +83,7 @@ def gen_abstract(output_path, result):
 
     txt = '\n'.join([s['content'] for s in sum_arr])
 
-    abstract = src.utilities.query(p, txt)
+    abstract = utilities.query(p, txt)
 
     gen_artifact(output_path, 'abstract', abstract)
     
@@ -101,7 +101,7 @@ def gen_markdown(output_path, sum_arr, note_arr, abstract):
         # Format note_body into markdown
         p="Format the following notes into rich markdown.\n Indent knowledge, bold keywords, and italicize examples. Format appropriate data into tables. Last but not least, keep the headers under or equal to ###.\n"
         
-        formatted = src.utilities.query(p, n_body)
+        formatted = utilities.query(p, n_body)
         
         section_md = f"## {title}\n{summary_body}\n{formatted}\n"
         

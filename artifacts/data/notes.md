@@ -1,81 +1,52 @@
 # Lecture Notes
 
     ## Abstract
-    This abstract summarizes the use of radioactivity to date objects and determine the age of Earth. It explains the concept of half-life and how uranium and lead decay can be used to estimate the age of zircon crystals. The abstract also mentions that radioactivity is a random process with varying levels of radioactivity.
+    This abstract explores the concept of radioactive decay and the relationship with half-life. It discusses how radioactive decay statistics demonstrate both randomness and predictability, particularly when examining large numbers of radioactive particles. The notes highlight the significance of understanding these principles in the study of nuclear physics and related fields.
 
     ## "Understanding Radioactivity and Half-Life"
-Neanderthals went extinct, radioactivity used to date objects, carbon 14 decay, uranium 238 half-life, radioisotopes decay like coin toss.
-### Notes on Extinction and Radioactivity
+Radioactive decay and half-life concept explained.
+### Radioactivity and Half-Life
 
-- Neanderthals went extinct about 35 to 40,000 years ago.
-- Radioactivity is used to determine the age of objects.
+- **Neanderthals**: *extinct species* of humans; believed to have gone extinct *35-40,000 years ago*
 
-### Carbon 14 Decay
+- **Radioactive decay**: used to determine the age of objects
 
-- Carbon 14 decays over time, reducing in amount.
-- After 5,730 years, **50 grams** of carbon 14 decays to **nitrogen 14**.
-- Half of the remaining amount of carbon 14 decays after each 5,730-year period.
-- The time it takes for half of a substance to decay is called its **half-life**.
+- **Carbon 14 example**: 50% decay every *5,730 years*
 
-### Uranium 238 Decay
+- **Half-life**: *time for half the amount* of radioactive substance to decay
 
-- Uranium 238 has a half-life of about **4 and a half billion years**.
-- Each radioisotope has its own unique half-life.
+- **Uranium 238 example**: *half-life of* 4.5 billion years
 
-### Radioactivity Comparison
+- **Radioisotopes**: have their own half-life
 
-- Radioactivity proceeds in a similar way to a game of tossing a coin.
-- After each minute, **half** of the people in the room will leave, based on random chance.
+- **Radioactive decay analogy**: *coin tossing game* with 100 million people
+    - Half of the group leaves after each round of coin tosses (*50% probability*)
 
-### Table: Carbon 14 Decay
+- **Half-life concept**: explained with *statistical probability* and *random events*
 
-| Time Period | Amount of Carbon 14 Remaining |
-|-------------|------------------------------|
-| 0 years     | 50 grams                     |
-| 5,730 years | 25 grams                     |
-| 11,460 years| 12.5 grams                   |
-| ...         | ...                          |
+### Radioactive Decay Example
 
-Note: The amount of carbon 14 reduces by half after each 5,730-year period.
+| Element       | Half-Life          |
+|---------------|--------------------|
+| Carbon 14     | 5,730 years        |
+| Uranium 238   | 4.5 billion years  |
+## "The Significance of Radioactive Decay Statistics"
+Radioactive decay statistics show randomness and predictability with large numbers.
+### Radioactive Decay Statistics
 
-### Table: Uranium 238 Decay
+- Indent knowledge, **bold keywords**, and *italicize examples*. Format appropriate data into tables. 
 
-| Time Period           | Half-Life |
-|-----------------------|-----------|
-| 0 years               | 4.5 billion years |
-| 4.5 billion years     | 2.25 billion years |
-| 9 billion years       | 1.125 billion years |
-| ...                   | ...       |
+Radioactive decay statistics become significant when taking into account large numbers of atoms. A single atom's decay cannot be predicted, but with many atoms, statistics become **meaningful**. Radioactive decay is a **random process** with a **50% chance** of decay at any given moment. The **half-life** of a radioactive sample is fixed and can be used to determine relative **radioactivity**. Shorter half-lives indicate more radioactive isotopes. Radioactivity is a **continuous process**, unlike the sudden decreases in the game example. The graph of radioactive decay shows a continuous reduction in the number of isotopes over time. The age of objects can be determined using radioactive decay, such as **uranium-lead dating** of zircon crystals. Lead is a byproduct of uranium decay, allowing for age determination based on the ratio of lead to uranium in a sample.
 
-Note: Uranium 238 has a half-life of about 4 and a half billion years.
-## "Understanding Radioactivity and Using it to Determine Age"
-Radioactivity is a random yet continuous process with a fixed half-life and varying levels of radioactivity, and it can be used to determine the age of Earth through uranium and lead decay in zircon crystals.
-### Radioactivity
+**Note:** The table below provides an example of radioactive decay data for an isotope.
 
-- **Radioactivity** is a random process.
-- The chances of a radioactive atom decaying at any given moment is **50%**.
-
-### Half-life
-
-- The **half-life** of a radioactive sample is fixed.
-- **Carbon-14** has a half-life of *5,730 years*, while **uranium-238** has a half-life of *4.5 billion years*.
-- Shorter half-life indicates higher radioactivity.
-
-### Radioactive Decay
-
-- In reality, radioactive decay is a continuous process.
-- The graph of radioactive decay is a curve.
-- After one half-life, the number reduces to *50%*, after the second half-life it reduces to *25%*, and so on.
-
-### Age Determination
-
-- **Zircon crystals** can be used to determine the age of Earth using uranium and lead decay.
-
-<br>
-
-| Isotope      | Half-life           |
-| ------------ | ------------------- |
-| Carbon-14    | 5,730 years         |
-| Uranium-238  | 4.5 billion years   |
+| Time (years) | Number of Isotopes |
+|--------------|---------------------|
+| 0            | 1000                |
+| 10           | 500                 |
+| 20           | 250                 |
+| 30           | 125                 |
+| 40           | 62.5                |
+| 50           | 31.25               |
 
     
