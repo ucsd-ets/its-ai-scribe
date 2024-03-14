@@ -23,7 +23,7 @@ def query(prompt, excerpt, stream=False):
     """
     Send a chat-based query to the Llama-2-70b chat model and return its response.
     """
-#     openai.api_base = "https://its-llamarama.ucsd.edu/v1"
+    openai.api_base = config.OPENAI_API_BASE
     openai.api_key = config.OPENAI_API_KEY
 
     chat_completion = openai.ChatCompletion.create(model=config.MODEL, 

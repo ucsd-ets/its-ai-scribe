@@ -4,6 +4,51 @@ from . import config
 import os
 
 def notetake(audio_path: str, language: str, output_path: str):
+    result = None
+    if config.CACHE_TRANSCRIPT and os.path.exists(f'{output_path}/transcript.json'):    
+        with open(f'{output_path}/transcript.json', 'r') as file:
+            result = json.loads(file.read())
+    else:
+        result = utilities.transcribe(audio_path, language)
+    
+    # Cache transcript
+    with open(f'{output_path}/transcript.json', 'w') as file:
+        file.write(json.dumps(result, indent=4))
+    
+    # No segments. Collate into a single string.
+    transcript = ' '.join([seg['text'] for seg in result['segments']])
+    
+    with open(f'{output_path}/transcript.txt', 'w') as file:
+        file.write(transcript)
+    
+    # Generate abstract
+    abstract = utilities.query("Write a 3 sentence abstract of the following transcript.\n", transcript)
+    
+    # Generate notes
+    notes = utilities.query("Write structured notes ONLY in bulletpoint form using the following lecture transcript. Make sure to explain each concept in depth and to structure the output in a legible and sensible manner. \n", transcript)
+    
+    with open(f'{output_path}/notes.txt', 'w') as file:
+        file.write(json.dumps(notes, indent=4))
+    
+    # Generate markdown
+    formatted = utilities.query("Format the following notes into rich markdown.\n Indent knowledge, bold keywords, and italicize examples. Format appropriate data into tables. Last but not least, keep the headers under or equal to ###.\n", notes)
+    
+    markdown = f"""# Lecture Notes
+    Abstract
+    {abstract}
+    
+    Notes
+    {formatted}
+    """
+    
+    print(markdown)
+    
+    with open(f'{output_path}/notes.md', 'w') as file:
+        file.write(markdown)
+    
+    return markdown
+
+def x_notetake(audio_path: str, language: str, output_path: str):
     
     result = None
     if config.CACHE_TRANSCRIPT and os.path.exists(f'{output_path}/transcript.json'):    
@@ -16,7 +61,9 @@ def notetake(audio_path: str, language: str, output_path: str):
     with open(f'{output_path}/transcript.json', 'w') as file:
         file.write(json.dumps(result, indent=4))
     
-    segments = utilities.chunk_on_pause(result['segments'], -1, 250, 750)
+    # segments = utilities.chunk_on_pause(result['segments'], -1, 250, 750)
+    segments = utilities.chunk_on_pause(result['segments'], -1, 1000, 1500)
+
     
     chapters = gen_chapters(output_path, segments)
     note_arr = gen_notes(output_path, chapters)

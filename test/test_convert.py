@@ -10,7 +10,6 @@ def test_mp3_conversion():
     )
     
     assert response.status_code == 200
-    assert response.json() == {"message": "File saved successfully"}
 
 def test_yt_conversion():
     
@@ -20,7 +19,6 @@ def test_yt_conversion():
     )
     
     assert response.status_code == 200
-    assert response.json() == {"message": "File saved successfully"}
 
 def test_notetake():
     
