@@ -6,3 +6,5 @@ git+https://github.com/pytube/pytube
 fastapi
 python-multipart
 uvicorn[standard]
+
+pytest

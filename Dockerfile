@@ -1,6 +1,8 @@
 # Use an official Python runtime as a parent image
 FROM python:3.11
 
+RUN apt update && apt install -y ffmpeg vim
+
 # Set the working directory in the container to /app
 WORKDIR /app
 
