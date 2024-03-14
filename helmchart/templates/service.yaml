@@ -1,0 +1,14 @@
+# Service
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: its-ai-scribe-service
+spec:
+  selector:
+    app: its-ai-scribe
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+  type: ClusterIP

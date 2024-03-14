@@ -1,0 +1,23 @@
+# Deployment
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: its-ai-scribe-deployment
+  labels:
+    app: its-ai-scribe
+spec:
+  replicas: 3
+  selector:
+  matchLabels:
+    app: its-ai-scribe
+  template:
+    metadata:
+      labels:
+      app: its-ai-scribe
+    spec:
+      containers:
+      - name: its-ai-scribe
+        image: its-ai-scribe
+        ports:
+        - containerPort: 8000
