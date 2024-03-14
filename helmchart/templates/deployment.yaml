@@ -18,6 +18,15 @@ spec:
     spec:
       containers:
       - name: its-ai-scribe
-        image: its-ai-scribe
+        image: ghcr.io/ucsd-ets/its-ai-scribe:latest
         ports:
         - containerPort: 8000
+
+        # Set the environment variables
+        env:
+        - name: OPENAI_API_KEY
+          value: PcnEQhARNPYPc7Tbth4Sp
+        - name: OPENAI_API_BASE
+          value: http://api-llama-70b-chat-vllm.proj-its-ai.svc:8000/v1
+        - name: MODEL
+          value: Llama-2-70b-chat

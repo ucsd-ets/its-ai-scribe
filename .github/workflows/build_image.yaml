@@ -2,7 +2,10 @@ name: Build Docker Image
 
 on:
   push:
-    branches: [ main ]
+    # branches: [ main ]
+    tags:
+      # Only run workflow on tags that match the pattern
+      - 'v*' # Push events to matching v*, like v1.0, v20.15.10
 
 jobs:
   build:
@@ -27,4 +30,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ghcr.io/${{ github.repository_owner }}/its-ai-scribe:tag
+        tags: ghcr.io/${{ github.repository_owner }}/its-ai-scribe:latest
